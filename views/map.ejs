@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search A location</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="/stylesheets/app.css">
+</head>
+
+<body>
+    
+    <form class="contain" action="/map" method="POST">
+        <h3 class="heading">Map</h3>
+        <div id='map'></div>
+        <div class="search-bar">
+        <input type="text" name="search" id="search" required>
+        <button>Search</button>
+        </div>
+    </form>
+    
+</body>
+
+
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>'; //to load the token in the ejs file so when the script runs it renders the map
+    const coordinates = <%-JSON.stringify(coordinates)%> // sedning the coordinates without stringifying them causes an error 
+</script>
+
+<script src="javascripts/showMap.js"></script>
+
+
+</html>
